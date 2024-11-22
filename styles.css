@@ -5,11 +5,22 @@
 }
 
 .main-container {
-    padding: 40px; /* Adiciona uma margem de 20px em ambos os lados */
-    max-width: 1200px; /* Define uma largura máxima para o conteúdo */
-    margin: 0 auto; /* Centraliza o contêiner horizontalmente */
+    margin: 0 50px; /* Adiciona margem de 30px nas laterais */
+    max-width: 100%; /* Garante que o contêiner ocupe 100% da largura da tela */
 }
 
+
+.banner-container {
+    width: 100%; /* Faz o container do banner ocupar 100% da largura da tela */
+    height: auto; /* A altura será determinada pela proporção da imagem */
+    overflow: hidden; /* Garante que a imagem não ultrapasse os limites */
+}
+
+.banner-image {
+    width: 100%; /* Faz a imagem ocupar 100% da largura */
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: cover; /* Cobre toda a área do contêiner sem distorcer a imagem */
+}
 
 html, body {
     height: 100%; /* Define a altura total do HTML e do corpo */
@@ -19,7 +30,7 @@ html, body {
 }
 
 /* Estilização da navegação principal */
-.navegacao-principal {
+.navegacao-desktop {
     margin: 0;
     height: 60px; /* Altura fixa para a barra de navegação */
     padding: 2px 10px; /* Reduzir o espaçamento interno lateral */
@@ -32,14 +43,14 @@ html, body {
     justify-content: space-between; /* Espaço entre o logo e a lista */
 }
 
-.navegacao-principal .logo {
+.navegacao-desktop .logo {
     height: 150px; /* Altura da logo */
     width: auto; /* Mantém a proporção */
     margin-left: 20px; /* Espaço entre o logo e a lista */
     margin-top: 10px; /* Espaço entre o logo e a margem superior */
 }
 
-.navegacao-principal .botao-contato {
+.navegacao-desktop .botao-contato {
     padding: 10px 15px; /* Consistente com o padding dos links */
     background-color: #bbed2f; /* Cor de fundo do botão */
     color: white; /* Cor do texto do botão */
@@ -51,7 +62,7 @@ html, body {
     margin-bottom: 15px;
 }
 
-.navegacao-principal ul {
+.navegacao-desktop ul {
     list-style: none; /* Remove as marcas da lista */
     margin: 0; /* Remove margens */
     padding: 0; /* Remove espaçamentos internos */
@@ -60,26 +71,27 @@ html, body {
     align-items: center; /* Alinha os itens verticalmente ao centro */
 }
 
-.navegacao-principal li {
+.navegacao-desktop li {
     margin: 0 15px; /* Aumenta a margem entre os itens */
 }
 
 /* Estilo específico para o botão */
-.navegacao-principal .botao-contato:hover {
+.navegacao-desktop .botao-contato:hover {
     background-color: #fff; /* Cor do fundo do botão ao passar o mouse */
     color: #000000; /* Cor do texto do botão ao passar o mouse */
 }
 
-.navegacao-principal a {
+.navegacao-desktop a {
     text-decoration: none; /* Remove o sublinhado */
     color: white; /* Cor do texto */
     font-size: 14px; /* Tamanho da fonte */
     transition: color 0.3s ease; /* Transição suave para a mudança de cor */
 }
 
-.navegacao-principal a:hover {
+.navegacao-desktop a:hover {
     color: #FFD700; /* Cor do texto ao passar o mouse */
 }
+
 
 body {
     font-family: Montserrat, sans-serif;
@@ -118,45 +130,25 @@ ul {
     padding: 0; /* Remove o preenchimento padrão */
 }
 
-.hero {
-    text-align: center; /* Centraliza o texto */
-    padding: 50px 20px; /* Espaçamento interno */
-    background-color: #000; /* Fundo preto */
-}
 
-.hero h1 {
-    font-size: 3em; /* Tamanho do título */
-    color: #fa9303; /* Cor laranja para o restante do título */
-    margin-bottom: 20px; /* Espaçamento abaixo do título */
-    font-weight: bold; /* Negrito para destaque */
-}
-
-.hero .highlight {
-    color: #fff; /* Cor branca para "Manutenção de Celulares e Tablets" */
-}
-
-.hero p {
-    font-size: 1.5em; /* Tamanho do subtítulo */
-    color: #fff; /* Cor branca */
-
-}
 
 .content-container {
     display: flex; /* Usar flexbox para alinhar a imagem e o texto */
     align-items: center; /* Alinha verticalmente os itens ao centro */
-    margin: 20px 0; /* Espaçamento acima e abaixo do contêiner */
-    margin-bottom: 80px;
+    justify-content: space-between; /* Espaço entre imagem e texto */
+    margin: 60px 0; /* Aumenta o espaçamento entre o conteúdo */
 }
 
 .content-image {
-    width: 40%; /* Ajuste a largura da imagem conforme necessário */
+    width: 40%; /* Reduz o tamanho da imagem para 40% do contêiner */
     height: auto; /* Mantém a proporção da imagem */
     margin-right: 20px; /* Espaço entre a imagem e o texto */
+    margin-left: 20px;
 }
 
 .text-content {
     flex: 1; /* Permite que o texto ocupe o espaço restante */
-    padding: 40px;
+    padding: 40px; /* Adiciona espaçamento interno */
     color: #fff; /* Cor do texto */
 }
 
@@ -168,8 +160,10 @@ ul {
 .text-content p {
     font-size: 1.2em; /* Tamanho do texto do parágrafo */
     line-height: 1.5; /* Espaçamento entre as linhas */
-    text-align: justify;
+    text-align: justify; /* Alinha o texto de forma justificada */
 }
+
+
 
 .titulo-content {
     text-align: center;
@@ -185,8 +179,8 @@ ul {
 }
 
 .dropbtn {
-    background-color: #fa9303; /* Cor do botão */
-    color: #fff; /* Cor do texto do botão */
+    background-color: #fff; /* Cor do botão */
+    color: #000000; /* Cor do texto do botão */
     padding: 20px; /* Espaçamento interno */
     font-size: 20px; /* Tamanho da fonte */
     border: none; /* Remove bordas */
@@ -218,7 +212,7 @@ ul {
     margin-bottom: 20px; /* Reduz a margem inferior do título para aproximá-lo do contêiner */
     padding-bottom: 10px; /* Adiciona um leve padding para espaçamento controlado */
     text-align: center; /* Alinha o título ao centro */
-    color: #b0b0b0;
+    color: #ffffff;
 }
 
 .diferenciais-container {
@@ -233,7 +227,7 @@ ul {
     color: #474747; /* Cor do texto */
     padding: 20px; /* Espaçamento interno dos itens */
     border-radius: 8px; /* Bordas arredondadas */
-    border: 2px solid #b0b0b0; /* Borda cinza */
+    border: 2px solid #ffffff; /* Borda cinza */
     box-shadow: none; /* Remove sombra dos itens */
     flex: 1 1 calc(30% - 20px); /* Ajusta a largura dos itens */
 }
@@ -377,83 +371,108 @@ button.next {
 
 .investimento-wrapper {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    flex-direction: column; /* Organiza os itens em uma coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre as seções */
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 20px 0 20px; /* Remove padding inferior */
+    padding: 20px;
 }
 
 .investimento-container {
-    flex: 1;
-    background-color: #000000;
-    border-radius: 8px;
-    padding: 20px; /* Reduz o padding geral */
-    color: #ccc;
-}
-
-.investimento-container h2 {
-    color: #fa9303;
+    width: 100%;
+    max-width: 1000px;
     text-align: center;
-    margin: 0; /* Remove margem superior e inferior */
-    padding-top: 0; /* Remove padding superior */
-    margin-bottom: 20px; /* Mantém um espaço abaixo do título */
+}
+h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fa9303;
 }
 
+h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 20px 0;
+}
+
+/* Flexbox para organizar o texto à esquerda e imagem à direita */
+.texto-imagem-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px; /* Espaçamento entre o texto e a imagem */
+    align-items: stretch; /* Garante que os containers tenham a mesma altura */
+}
+
+.texto-left {
+    width: 30%; /* O texto ocupa 45% da tela */
+    display: flex;
+    flex-direction: column; /* Organiza os blocos de texto em coluna */
+    gap: 20px; /* Espaço entre os containers de texto */
+}
+
+.texto-container {
+    padding: 10px;
+    border: 2px solid #ffffff; /* Borda branca ao redor do texto */
+    border-radius: 8px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.texto-container p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Seção de imagem */
+.imagem-container {
+    width: 70%; /* Limita a largura da imagem */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .imagem-container img {
-    width: 100%; /* Imagem ocupa toda a largura do container */
-    max-width: 300px; /* Limite de largura da imagem */
+    width: 100%;
+    height: auto;
 }
 
-.investimento-container h3 {
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.investimento-container p {
-    color: #ccc;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-.preco-antigo {
-    text-decoration: line-through;
-    color: red;
-    font-size: 1.5rem;
-    margin-right: 10px;
-}
-
-.preco-promocional {
-    color: #bbed2f;
-    font-size: 1.8rem;
-    font-weight: bold;
-}
-
+/* Seção de Vagas Limitadas */
 .vagas-limitadas {
-    border: 2px solid #ffd700; /* Borda amarela para destacar */
-    border-radius: 8px; /* Bordas arredondadas */
-    padding: 20px; /* Espaçamento interno */
-    text-align: center; /* Centraliza o texto */
-    margin: 60px 0; /* Espaçamento acima e abaixo */
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 1000px; /* Alinha com o tamanho da imagem */
 }
 
 .vagas-limitadas h3 {
     font-size: 1.5em;
     font-weight: bold;
-    color: #fa9303; /* Cor do título */
+    color: #fa9303;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    margin: 0 0 10px; /* Remove margem superior e ajusta a inferior */
+    margin: 0 0 10px;
 }
 
 .vagas-limitadas p {
     font-size: 1.2em;
     margin: 0;
-    color: #ffffff; /* Cor do texto */
+    color: #ffffff;
+}
+
+/* Seção de Botão */
+.cta-container {
+    width: 100%;
+    max-width: 1000px; /* Alinha com o tamanho da imagem */
+    margin-top: 20px;
 }
 
 .cta-button {
@@ -465,24 +484,12 @@ button.next {
     border-radius: 8px;
     font-weight: bold;
     font-size: 1.5rem;
-    margin: 20px auto;
     text-decoration: none;
     transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
     background-color: #fa9303;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .investimento-wrapper {
-        flex-direction: column;
-        align-items: center;
-    }
-    .imagem-container img {
-        max-width: 100%;
-    }
 }
 
 .redes-sociais h3 {
@@ -552,28 +559,69 @@ button.next {
 }
 
 
-/* Responsividade para dispositivos móveis e telas menores */
+
+/* Oculta a navegação desktop em dispositivos móveis */
 @media (max-width: 768px) {
-    /* Ajusta a navegação principal */
-    .navegacao-principal {
-        flex-direction: column;
-        align-items: flex-start;
+    .navegacao-desktop {
+        display: none;
+    }
+}
+
+/* Estilos da navegação móvel */
+.navegacao-movel {
+    display: none; /* Oculta em telas grandes */
+    position: relative;
+}
+
+.menu-icon {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.menu-movel {
+    display: none;
+    flex-direction: column;
+    list-style: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #474747;
+}
+
+.menu-movel li {
+    padding: 15px;
+    text-align: center;
+}
+
+.menu-movel li a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-movel.show {
+    display: flex; /* Exibe o menu móvel */
+}
+
+
+/* Responsividade para dispositivos menores */
+@media (max-width: 768px) {
+    .banner-image {
+        width: 100%; /* Garante que a imagem se ajuste ao tamanho da tela */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+}
+/* Exibe a navegação móvel em dispositivos menores */
+@media (max-width: 768px) {
+    .navegacao-movel {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         padding: 10px;
-        height: auto;
-    }
-
-    .navegacao-principal ul {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .navegacao-principal li {
-        margin: 10px 0; /* Aumenta o espaçamento entre itens do menu */
-    }
-
-    .navegacao-principal .botao-contato {
-        align-self: center;
-        margin: 10px 0; /* Espaçamento abaixo do botão */
+        background-color: #474747;
     }
 
     /* Ajusta o layout da seção de conteúdo principal */
@@ -661,5 +709,34 @@ button.next {
 
     .icones-sociais a {
         margin: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .texto-imagem-container {
+        flex-direction: column; /* Coloca o texto e a imagem em coluna */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    .texto-left {
+        width: 100%; /* O texto ocupa toda a largura */
+        padding: 10px; /* Adiciona um pequeno espaçamento */
+    }
+
+    .imagem-container {
+        width: 100%; /* A imagem ocupa toda a largura */
+        max-width: 100%;
+        margin-top: 10px; /* Adiciona espaço entre o texto e a imagem */
+    }
+
+    .vagas-limitadas {
+        width: 100%; /* A largura da seção de vagas ocupa 100% */
+        max-width: 100%; /* Garante que não ultrapasse 100% */
+        padding: 10px; /* Ajusta o padding */
+    }
+
+    .cta-button {
+        width: 100%; /* Faz o botão ocupar toda a largura */
+        font-size: 1.2rem; /* Ajusta o tamanho da fonte */
     }
 }
