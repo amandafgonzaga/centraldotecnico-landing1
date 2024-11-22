@@ -1,5 +1,5 @@
 let lastScrollTop = 0; // Para rastrear a posição de rolagem anterior
-const navbar = document.querySelector('.navegacao-principal');
+const navbar = document.querySelector('.navegacao-desktop');
 
 // Evento de rolagem para esconder/mostrar a barra de navegação
 window.addEventListener('scroll', function() {
@@ -98,3 +98,8 @@ setInterval(() => {
     changeDepoimento(1);
 }, 5000); // Troca a cada 5 segundos
 
+
+function toggleMobileMenu() {
+    const menu = document.querySelector('.menu-movel');
+    menu.classList.toggle('show');
+}
