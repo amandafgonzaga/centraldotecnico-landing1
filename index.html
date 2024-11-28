@@ -4,40 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curso Completo de Manutenção de Celular/Tablet Iniciante</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles1.css"> 
     <link rel="icon" href="images/processador.png" type="image/png">
 </head>
 <body>
 
     
-    <!-- Navegação Móvel -->
-    <nav class="navegacao-movel">
+        <!-- Navegação Desktop -->
+    <nav class="navegacao-desktop">
         <a href="index.html"><img src="images/logo ct branco sem margem.png" alt="Logo Central do Técnico" class="logo"></a>
-        <button class="menu-icon" onclick="toggleMobileMenu()">☰</button>
-        <ul class="menu-movel">
+        <ul>
             <li><a href="index.html">Início</a></li>
-            <li><a href="#cursos">Cursos</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#contato">Contato</a></li>
+            <li><a href="#diferenciais">Sobre</a></li>
+            <li><a href="#rodape">Contato</a></li>
             <li><a href="https://wa.me/55119933344084" class="botao-contato" target="_blank">Fale conosco</a></li>
         </ul>
     </nav>
+
+    <!-- Navegação Móvel -->
+    <nav class="navegacao-movel">
+        <a href="index.html"><img src="images/logo ct branco sem margem.png" alt="Logo Central do Técnico" class="logo"></a>
+        <button class="menu-icon">☰</button>
+        <ul class="menu-movel">
+            <li><a href="landing1.html">Início</a></li>
+            <li><a href="#diferenciais">Sobre</a></li>
+            <li><a href="#rodape">Contato</a></li>
+            <li><a href="https://wa.me/55119933344084" class="botao-contato" target="_blank">Fale conosco</a></li>
+        </ul>
+    </nav>
+
+    
     <div class="banner-container">
-        <img src="images/BANNER.png" alt="Banner de Transformação na Área de Manutenção" class="banner-image">
+        <img src="images/banner.png" alt="Banner de Transformação na Área de Manutenção" 
+        class="banner-image">
+        <img src="images/BANNER (1800 x 200 px).png" alt="Banner de escola 5 estrelas" 
+        class="banner-image">
     </div>
+
+
     <div class="main-container">
         <!-- Substituindo a section hero por um banner -->
-        
-    
-    
     <div class="content-container">
         <img src="images/FOTO.png" alt="Manutenção de Celulares e Tablets" class="content-image" />
         <div class="text-content">
-            <h2>Por que este curso é para você?</h2>
+            <h2>POR QUE ESTE CURSO É PARA VOCÊ?</h2>
             <p>A manutenção de dispositivos móveis é uma das áreas que mais cresce no Brasil. Com a alta demanda e a quantidade de aparelhos em uso, o mercado necessita de profissionais qualificados. <br> Nosso curso é a sua chance de entrar nesse mercado em plena expansão!</p>
+            <a href="https://wa.me/5511920924554" class="content-button"><strong>FALE COM A GENTE</strong></a>
         </div>
     </div>
-    
+        
+        
     <h2 class="titulo-content">O QUE VOCÊ VAI APRENDER:</h2>
         <ul class="course-content">
             <li>
@@ -89,7 +105,11 @@
                 </div>
             </li>
         </ul>
+        <div class="cta-dropdown">
+            <a href="https://wa.me/5511920924554" class="cta-button"><strong>CONVERSE COM UM ESPECIALISTA</strong></a>
+        </div>
 
+        <section id="diferenciais" class="diferenciais-container">
         <h2 class="titulo-diferenciais">DIFERENCIAIS DA CENTRAL DO TÉCNICO</h2>
         <div class="diferenciais-container">
             <div class="diferencial-item">
@@ -113,7 +133,7 @@
                 <p>Acesso vitalício a um grupo VIP e 30 dias gratuitos no nosso Coworking.</p>
             </div>
         </div>
-
+    </section>
 
         <section class="secao-galeria">
             <div class="grid-galeria">
@@ -130,7 +150,10 @@
                     <img src="images/WhatsApp Image 2023-06-24 at 14.56.09 (1).jpg" alt="Foto 4">
                 </div>
             </div>
-        </section> 
+        </section>
+        <div class="cta-diferenciais">
+            <a href="https://wa.me/5511920924554" class="cta-button"><strong>TIRE SUAS DÚVIDAS</strong></a>
+        </div> 
 
         <section class="secao-depoimentos">
             <h2 class="titulo-depoimentos">VEJA O QUE NOSSOS ALUNOS DIZEM...</h2>
@@ -208,29 +231,63 @@
         </div>
     </div>
         
+    <footer class="rodape">
+        <div class="rodape-container">
+            <!-- Container 1: Mapa -->
+            <div class="rodape-mapa">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.616793474094!2d-46.576848990644166!3d-23.546281378721776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5f6a3f8a0d45%3A0x28cb2e173963d4!2sCentral%20do%20T%C3%A9cnico%20-%20Curso%20Manuten%C3%A7%C3%A3o%20de%20Celular%2C%20Computador%20e%20Notebook!5e0!3m2!1spt-PT!2sbr!4v1732737183620!5m2!1spt-PT!2sbr"
+                    width="300"
+                    height="200"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+    
+            <!-- Container 2: Logo e Redes Sociais -->
+            <div class="rodape-info-cinza">
+                <div class="rodape-info">
+                    <img src="images/logo ct branco sem margem.png" alt="Logo Central do Técnico" class="rodape-logo">
+                    <p class="rodape-endereco">
+                        R. Tuiuti, 2358 - Sala 2<br>
+                        Tatuapé, São Paulo<br>
+                    </p>
+                </div>
+                <div class="rodape-redes-sociais">
+                    <p>Não se esqueça de nos seguir nas <span class="texto-laranja">redes sociais</span> para ficar por dentro de tudo!</p>
 
-    <div class="redes-sociais">
-        <h3>Siga a Central do Técnico nas redes sociais</h3>
-        <div class="icones-sociais">
-            <a href="https://www.facebook.com/centraldotec/" target="_blank">
-                <img src="images/icons8-facebook-48.png" alt="Facebook" class="social-icon" />
-            </a>
-            <a href="https://instagram.com/centraldotec" target="_blank">
-                <img src="images/icons8-instagram-48.png" alt="Instagram" class="social-icon" />
-            </a>
-            <a href="https://www.linkedin.com/company/central-do-tecnico" target="_blank">
-                <img src="images/icons8-linkedin-48.png" alt="Linkedin" class="social-icon" />
-            </a>
-            <a href="https://www.youtube.com/channel/UC7xU4eznPipzL1YqxFV9EOA" target="_blank">
-                <img src="images/icons8-youtube-48.png" alt="YouTube" class="social-icon" />
-            </a>
+                    <div class="redes-sociais-icones">
+                        <a href="https://www.facebook.com/centraldotec/" target="_blank">
+                            <img src="images/icons8-facebook-48.png" alt="Facebook">
+                        </a>
+                        <a href="https://instagram.com/centraldotec" target="_blank">
+                            <img src="images/icons8-instagram-48.png" alt="Instagram">
+                        </a>
+                        <a href="https://www.tiktok.com/@centraldotec" target="_blank">
+                            <img src="images/icons8-tiktok-48.png" alt="TikTok">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UC7xU4eznPipzL1YqxFV9EOA" target="_blank">
+                            <img src="images/icons8-youtube-48.png" alt="YouTube">
+                        </a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Container 3: Contato -->
+            <div class="rodape-contato">
+                <h3>Tem alguma dúvida?<br>Estamos aqui para ajudar!</h3>
+                <p>Agende uma visita e venha conhecer nossa escola de pertinho. Vai ser um prazer te receber e tirar todas as suas dúvidas.</p>
+                <a href="https://wa.me/55119933344084" class="botao-whatsapp" target="_blank">TIRE SUAS DÚVIDAS</a>
+            </div>
         </div>
-    </div>
-</div>
-
-    <footer class="rodape-site">
-        <p>© 2024 Central do Técnico. Todos os direitos reservados.</p>
+        <div class="rodape-copy">
+            <p>© 2024 Central do Técnico. Todos os direitos reservados.</p>
+        </div>
     </footer>
+    
+    
 
     <a href="https://wa.me/55119933344084" class="whatsapp-icon" target="_blank">
         <img src="images/whatsapp.png" alt="WhatsApp" />
@@ -242,4 +299,4 @@
     </script>
 </body>
 </html>
-<script src="script.js"></script>
+<script src="script-landings.js"></script>
