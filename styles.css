@@ -1,53 +1,73 @@
+/* ========================================================================
+   Configurações globais e reset
+========================================================================= */
 *,
 *::before,
 *::after {
     box-sizing: border-box; /* Para garantir que padding e border não afetem a largura total dos elementos */
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Garante que a altura da tela seja ocupada 100% */
+    background-color: #000000; /* Cor de fundo preta */
+}
+
+/* ========================================================================
+   Configuração da página principal
+========================================================================= */
+
 .main-container {
     margin: 0 50px; /* Adiciona margem de 30px nas laterais */
+    padding-top: 60px; /* Garantir que o conteúdo não fique escondido atrás da navegação */
     max-width: 100%; /* Garante que o contêiner ocupe 100% da largura da tela */
 }
 
 
+/* ========================================================================
+   Estilização do banner
+========================================================================= */
+
 .banner-container {
-    width: 100%; /* Faz o container do banner ocupar 100% da largura da tela */
-    height: auto; /* A altura será determinada pela proporção da imagem */
-    overflow: hidden; /* Garante que a imagem não ultrapasse os limites */
+    display: flex; /* Exibe os banners em um layout flexível */
+    flex-direction: column; /* Empilha os banners verticalmente */
+    margin: 0; /* Remove margens ao redor do container */
+    padding: 0; /* Remove qualquer padding ao redor do container */
 }
 
 .banner-image {
-    width: 100%; /* Faz a imagem ocupar 100% da largura */
-    height: auto; /* Mantém a proporção da imagem */
-    object-fit: cover; /* Cobre toda a área do contêiner sem distorcer a imagem */
+    width: 100%; /* Faz os banners ocuparem toda a largura do container */
+    height: auto; /* Mantém a proporção das imagens */
+    margin: 0; /* Remove margens ao redor das imagens */
+    padding: 0; /* Remove qualquer padding das imagens */
+    display: block; /* Garante que as imagens se comportem como blocos */
+    border: none; /* Remove qualquer borda por padrão */
 }
 
-html, body {
-    height: 100%; /* Define a altura total do HTML e do corpo */
-    margin: 0; /* Remove a margem padrão do corpo */
-    padding: 0;
-    background-color: #000000; /* Cor de fundo preta */
-}
 
-/* Estilização da navegação principal */
+
+/* ========================================================================
+   Navegação
+========================================================================= */
 .navegacao-desktop {
     margin: 0;
-    height: 60px; /* Altura fixa para a barra de navegação */
-    padding: 2px 10px; /* Reduzir o espaçamento interno lateral */
+    height: 60px; /* Defina uma altura fixa para a barra de navegação */
+    padding: 2px 10px; /* Diminuir o espaçamento interno lateral */
     background-color: #474747; /* Cor de fundo */
     position: fixed; /* Fixa a barra no topo */
     width: 100%; /* Largura total */
     z-index: 10; /* Garante que a barra fique acima de outros elementos */
     display: flex; /* Flexbox para alinhar itens */
-    align-items: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza verticalmente todos os itens na barra */
     justify-content: space-between; /* Espaço entre o logo e a lista */
 }
 
 .navegacao-desktop .logo {
-    height: 150px; /* Altura da logo */
+    height: 150px; /* Mantenha a altura da logo */
     width: auto; /* Mantém a proporção */
     margin-left: 20px; /* Espaço entre o logo e a lista */
-    margin-top: 10px; /* Espaço entre o logo e a margem superior */
+    margin-top: 10px; /* Espaço entre o logo e a magin superior */
 }
 
 .navegacao-desktop .botao-contato {
@@ -60,6 +80,7 @@ html, body {
     transition: background-color 0.3s ease, color 0.3s ease; /* Transições suaves */
     margin-left: auto; /* Espaço à direita do botão */
     margin-bottom: 15px;
+    
 }
 
 .navegacao-desktop ul {
@@ -130,27 +151,98 @@ ul {
     padding: 0; /* Remove o preenchimento padrão */
 }
 
-
-
+/* ========================================================================
+   Configuração de conteúdo principal
+========================================================================= */
 .content-container {
-    display: flex; /* Usar flexbox para alinhar a imagem e o texto */
-    align-items: center; /* Alinha verticalmente os itens ao centro */
-    justify-content: space-between; /* Espaço entre imagem e texto */
-    margin: 60px 0; /* Aumenta o espaçamento entre o conteúdo */
+    display: flex;
+    align-items: flex-start; /* Alinha os itens no topo */
+    justify-content: flex-start; /* Alinha à esquerda */
+    margin: 60px 0; /* Ajusta a margem superior e inferior */
+    padding: 20px; /* Ajusta o espaçamento interno */
 }
 
 .content-image {
-    width: 40%; /* Reduz o tamanho da imagem para 40% do contêiner */
+    width: 40%; /* Ajuste a largura da imagem conforme necessário */
     height: auto; /* Mantém a proporção da imagem */
-    margin-right: 20px; /* Espaço entre a imagem e o texto */
-    margin-left: 20px;
+    margin-right: 30px; /* Espaço entre a imagem e o texto */
 }
 
 .text-content {
-    flex: 1; /* Permite que o texto ocupe o espaço restante */
-    padding: 40px; /* Adiciona espaçamento interno */
+    flex: 1; /* O texto ocupa o restante do espaço */
+    padding: 20px; /* Adiciona espaçamento interno */
     color: #fff; /* Cor do texto */
+    display: flex;
+    flex-direction: column; /* Organiza os itens na coluna */
+    justify-content: flex-start; /* Garante que o texto fique alinhado ao topo */
+    margin-top: -60px; /* Remove a margem superior para alinhar com a imagem */
 }
+
+.text-content h2 {
+    font-size: 2.2em; /* Tamanho do título */
+    margin-bottom: 50px; /* Diminui o espaçamento abaixo do título */
+}
+
+.text-content p {
+    font-size: 1.2em; /* Tamanho do texto */
+    line-height: 1.6; /* Ajusta o espaçamento entre as linhas */
+    text-align: justify; /* Alinha o texto de forma justificada */
+    margin-bottom: 70px; /* Menor margem abaixo do parágrafo */
+}
+
+.content-button {
+    display: inline-block;
+    background-color: #bbed2f;  /* Cor do WhatsApp */
+    color: #000000;
+    padding: 12px 50px; /* Ajusta o padding para um botão maior */
+    border-radius: 8px; /* Bordas arredondadas */
+    font-size: 1.4em; /* Tamanho da fonte maior */
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-top: 10px; /* Garante que o botão fique abaixo do texto */
+    display: block; /* Faz o botão ocupar o espaço inteiro disponível */
+    margin-left: auto;
+    margin-right: auto; /* Centraliza o botão */
+    width: 100%;
+}
+
+.content-button:hover {
+    background-color: #fa9303;  /* Cor de hover mais escura */
+}
+
+/* Ajustes para telas menores, por exemplo, abaixo de 768px */
+@media (max-width: 768px) {
+    /* Ajusta o contêiner para empilhar os itens verticalmente */
+    .content-container {
+        flex-direction: column; /* Empilha os itens verticalmente */
+        margin: 20px 0; /* Diminui a margem superior e inferior para 20px */
+        padding: 5px; /* Reduz o padding para um valor mais compacto */
+    }
+
+    /* Ajusta a imagem para ocupar 100% da largura em telas menores */
+    .content-image {
+        width: 100%; /* A imagem ocupa 100% da largura */
+        margin-bottom: 10px; /* Adiciona um espaço menor abaixo da imagem */
+    }
+
+    /* Ajusta o texto e o botão em telas menores */
+    .text-content {
+        flex: 1;
+        padding: 5px 5px; /* Ajusta o padding para dar mais espaço nas laterais sem exagerar */
+        margin-top: 0px; /* Menos espaço acima do texto */
+        margin-bottom: 15px; /* Menos espaço abaixo do texto */
+    }
+
+    /* Ajusta o botão para ocupar toda a largura da tela */
+    .content-button {
+        width: 100%; /* O botão ocupa 100% da largura */
+        padding: 10px 20px; /* Ajusta o tamanho do botão */
+        font-size: 1.2em; /* Ajusta o tamanho da fonte */
+        margin-top: 10px; /* Garante um bom espaço entre o texto e o botão */
+    }
+}
+
 
 .text-content h2 {
     font-size: 2em; /* Tamanho do título */
@@ -163,8 +255,6 @@ ul {
     text-align: justify; /* Alinha o texto de forma justificada */
 }
 
-
-
 .titulo-content {
     text-align: center;
 }
@@ -173,6 +263,10 @@ ul {
     list-style-type: none; /* Remove marcadores padrão da lista */
     padding: 0; /* Remove o preenchimento padrão */
 }
+
+/* ========================================================================
+   Estilização de listas e dropdowns
+========================================================================= */
 
 .dropdown {
     margin: 10px 0; /* Espaçamento entre os itens */
@@ -206,6 +300,29 @@ ul {
 .dropdown:focus-within .dropdown-content {
     display: block; /* Mostra a dropdown */
 }
+.cta-dropdown .cta-button {
+    display: block;
+    background-color: #bbed2f;
+    color: #000000;
+    text-align: center;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-left: auto;
+    margin-right: auto; /* Centraliza o botão dentro do contêiner */
+    width: 100%; /* O botão ocupará a largura total disponível, ajustável conforme necessário */
+}
+
+.cta-button:hover {
+    background-color: #fa9303;  /* Cor de hover mais escura */
+}
+
+/* ========================================================================
+   Diferenciais
+========================================================================= */
 
 .titulo-diferenciais {
     margin-top: 100px;
@@ -278,20 +395,42 @@ ul {
     object-fit: cover; /* Corta as bordas da imagem para mantê-la proporcional */
 }
 
+.cta-diferenciais .cta-button {
+    display: block;
+    background-color: #bbed2f;
+    color: #000000;
+    text-align: center;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-left: auto;
+    margin-right: auto; /* Centraliza o botão dentro do contêiner */
+    width: 100%; /* O botão ocupará a largura total disponível, ajustável conforme necessário */
+}
+
+.cta-button:hover {
+    background-color: #fa9303;  /* Cor de hover mais escura */
+}
+
+
 
 .secao-depoimentos {
-    border-top: 2px solid #fff; /* Adiciona uma linha branca acima do texto do rodapé */
+    border-top: 2px solid #fff; /* Linha branca acima da seção */
     background-color: #000; /* Fundo da seção */
     color: #fff; /* Cor do texto */
-    padding: 40px 20px; /* Aumentando o padding para dar mais espaço ao conteúdo */
+    padding: 20px 20px 40px 20px; /* Diminui o padding superior */
     position: relative; /* Para posicionar os botões corretamente */
-    border-bottom: 2px solid #fff; /* Adiciona uma linha branca acima do texto do rodapé */
+    border-bottom: 2px solid #fff; /* Linha branca abaixo da seção */
 }
 
 .titulo-depoimentos {
     text-align: center;
+    margin-top: 10px; /* Diminui o espaçamento superior entre a linha e o título */
     margin-bottom: 20px;
-    font-size: 2rem; /* Aumentando o tamanho da fonte do título */
+    font-size: 2rem; /* Tamanho do título */
 }
 
 .depoimentos-container {
@@ -316,6 +455,7 @@ ul {
     margin: 0 10px; /* Espaçamento entre os depoimentos */
     flex-shrink: 0; /* Impede que o tamanho do depoimento diminua */
 }
+
 .depoimento-icon {
     display: flex; /* Usando flex para alinhar o ícone e o texto */
     align-items: center; /* Alinha verticalmente o ícone e o texto */
@@ -369,20 +509,38 @@ button.next {
 }
 
 
+@media (max-width: 768px) {
+    .depoimentos-wrapper {
+        flex-direction: column; /* Mantém os depoimentos alinhados verticalmente em telas menores */
+        width: 100%; /* Garante que o contêiner ocupe toda a largura */
+    }
+
+    .depoimento {
+        min-width: 100%; /* Faz os depoimentos ocuparem toda a largura em telas menores */
+        max-width: 100%; /* Garante que os depoimentos não ultrapassem a largura do contêiner */
+        margin-bottom: 15px; /* Adiciona espaço entre os depoimentos */
+    }
+
+    button.prev, button.next {
+        display: none; /* Esconde os botões de navegação em telas menores */
+    }
+}
+
+
 .investimento-wrapper {
     display: flex;
     flex-direction: column; /* Organiza os itens em uma coluna */
     align-items: center; /* Centraliza os itens horizontalmente */
     justify-content: center;
     gap: 20px; /* Espaçamento entre as seções */
-    max-width: 1200px;
+    max-width: 1800px;
     margin: 0 auto;
     padding: 20px;
 }
 
 .investimento-container {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1800px;
     text-align: center;
 }
 h1 {
@@ -395,7 +553,7 @@ h2 {
     font-size: 2.5em;
     font-weight: bold;
     color: #ffffff;
-    margin: 20px 0;
+    margin: 40px 0;
 }
 
 /* Flexbox para organizar o texto à esquerda e imagem à direita */
@@ -408,14 +566,14 @@ h2 {
 }
 
 .texto-left {
-    width: 30%; /* O texto ocupa 45% da tela */
+    width: 30%; /* O texto ocupa 30% da tela */
     display: flex;
     flex-direction: column; /* Organiza os blocos de texto em coluna */
-    gap: 20px; /* Espaço entre os containers de texto */
+    gap: 50px; /* Espaço entre os containers de texto */
 }
 
 .texto-container {
-    padding: 10px;
+    padding: 28px;
     border: 2px solid #ffffff; /* Borda branca ao redor do texto */
     border-radius: 8px;
     color: #ffffff;
@@ -448,7 +606,7 @@ h2 {
     text-align: center;
     margin: 20px 0;
     width: 100%;
-    max-width: 1000px; /* Alinha com o tamanho da imagem */
+    max-width: 1800px; /* Alinha com o tamanho da imagem */
 }
 
 .vagas-limitadas h3 {
@@ -471,7 +629,7 @@ h2 {
 /* Seção de Botão */
 .cta-container {
     width: 100%;
-    max-width: 1000px; /* Alinha com o tamanho da imagem */
+    max-width: 1800px; /* Alinha com o tamanho da imagem */
     margin-top: 20px;
 }
 
@@ -492,35 +650,128 @@ h2 {
     background-color: #fa9303;
 }
 
-.redes-sociais h3 {
-    margin-top: 100px;
-    margin-bottom: 10px; /* Espaçamento abaixo do título */
-    font-weight: normal; /* Remove o negrito do texto */
-    text-align: center; /* Centraliza o texto */
+.rodape {
+    margin-top: 50px;
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
 }
 
-.icones-sociais {
-    display: flex; /* Usa flexbox para alinhar os ícones */
-    justify-content: center; /* Centraliza os ícones horizontalmente */
+.rodape-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
 }
 
-.icones-sociais a {
-    margin: 0 10px; /* Espaçamento entre os ícones */
-    font-size: 20px; /* Tamanho dos ícones */
-    color: #fff; /* Cor dos ícones */
-    transition: transform 0.2s; /* Transição suave para o efeito de aumento */
+.rodape-mapa {
+    flex: 1 1 35%;
 }
 
-.icones-sociais a:hover {
-    transform: scale(1.2); /* Aumenta o ícone ao passar o mouse */
+.rodape-mapa iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
 }
 
-.rodape-site {
-    text-align: left; /* Centraliza o texto no rodapé */
-    padding: 10px; /* Espaçamento interno */
-    color: #fff; /* Cor do texto */
-    border-top: 2px solid #fff; /* Adiciona uma linha branca acima do texto do rodapé */
-    margin-top: 10px; /* Espaçamento acima do rodapé, opcional */
+.rodape-info-cinza {
+    flex: 1 1 40%; /* Reduz o tamanho do container */
+    background-color: #333; /* Fundo cinza */
+    color: #fff;
+    padding: 10px 20px; /* Reduz o padding interno */
+    display: flex;
+    flex-direction: row; /* Alinha lado a lado */
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    max-width: 600px; /* Define um limite de largura para o container */
+    margin: 0 auto; /* Centraliza o container */
+}
+
+.rodape-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha itens à esquerda */
+    text-align: left; /* Texto alinhado à esquerda */
+}
+
+.rodape-logo {
+    width: 100px;
+    height: auto;
+}
+
+.rodape-endereco {
+    line-height: 1.5; /* Espaçamento entre linhas */
+    font-size: 1rem; /* Tamanho da fonte */
+    text-align: left; /* Alinha o texto à esquerda */
+    word-wrap: break-word; /* Garante que o texto não fique espremido */
+    max-width: 250px; /* Define uma largura máxima para o texto */
+}
+.rodape-redes-sociais {
+    display: flex;
+    flex-direction: column;
+    text-align: justify; /* Texto alinhado à esquerda */
+    margin-left: 120px;
+}
+
+.texto-laranja {
+    color: #fa9303; /* Cor laranja */
+    font-weight: bold; /* Torna o texto mais destacado */
+}
+
+
+.redes-sociais-icones {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.redes-sociais-icones img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
+}
+
+.redes-sociais-icones img:hover {
+    transform: scale(1.2);
+}
+
+.rodape-contato {
+    flex: 1 1 25%;
+    text-align: left;
+}
+
+.rodape-contato h3 {
+    color: #fa9303;
+    margin-bottom: 10px;
+}
+
+.botao-whatsapp {
+    display: inline-block;
+    background-color: #bbed2f;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.botao-whatsapp:hover {
+    background-color: #fa9303;
+    color: #fff;
+}
+
+.rodape-copy {
+    text-align: center;
+    padding-top: 10px;
+    border-top: 2px solid #fff;
+    font-size: 0.9em;
+    margin-top: 20px;
 }
 
 .whatsapp-icon {
@@ -563,35 +814,61 @@ h2 {
 /* Oculta a navegação desktop em dispositivos móveis */
 @media (max-width: 768px) {
     .navegacao-desktop {
-        display: none;
+        display: none; /* Esconde a navegação desktop */
     }
+
+/* Estilo para o menu móvel */
+.menu-movel {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Ajustado para não sobrepor a barra de navegação */
+    left: 0;
+    width: 100%;
+    background-color: rgba(71, 71, 71, 0.7); /* Cor com transparência */
+    z-index: 9999;
+    transition: all 0.3s ease-in-out; /* Suaviza a abertura e o fechamento */
 }
 
-/* Estilos da navegação móvel */
+.menu-movel.show {
+    display: flex !important; /* Torna o menu visível */
+    opacity: 1;
+}
+
+/* Navegação Móvel */
+.navegacao-movel .logo {
+    height: 60px; /* Ajuste o tamanho da logo no menu móvel */
+    margin-left: 20px; /* Diminui a margem à esquerda */
+}
+
+.navegacao-movel .menu-icon {
+    font-size: 20px; /* Tamanho maior para o ícone do menu */
+    margin-right: 20px;
+}
 .navegacao-movel {
-    display: none; /* Oculta em telas grandes */
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    background-color: rgba(71, 71, 71, 0.7); /* Cor com transparência */
+    position: fixed; /* Fixa no topo */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
+
+/* Estilo do botão de menu */
 .menu-icon {
-    font-size: 24px;
+    font-size: 10px;
     background: none;
     border: none;
     cursor: pointer;
     color: white;
 }
 
-.menu-movel {
-    display: none;
-    flex-direction: column;
-    list-style: none;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: #474747;
-}
-
+/* Ajuste dos links do menu */
 .menu-movel li {
     padding: 15px;
     text-align: center;
@@ -602,59 +879,74 @@ h2 {
     text-decoration: none;
 }
 
-.menu-movel.show {
-    display: flex; /* Exibe o menu móvel */
+    /* Ajuste para o botão de contato */
+    .botao-contato {
+        padding: 10px 20px; /* Tamanho ajustado do botão */
+        background-color: #bbed2f;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-top: 10px;
+    }
+
+    /* Ajuste para os links dentro do menu */
+    .menu-movel li a:hover {
+        color: #000000; /* Cor de destaque ao passar o mouse */
+    }
 }
 
 
-/* Responsividade para dispositivos menores */
+/* Responsividade para a imagem do banner */
 @media (max-width: 768px) {
+    .banner-container {
+        display: flex; /* Usa Flexbox para empilhar os banners */
+        flex-direction: column; /* Organiza os banners verticalmente */   
+        margin: 0; /* Remove qualquer margem no container */
+        padding: 0; /* Remove qualquer padding no container */
+        padding-top: 78px; /* Adiciona espaço igual à altura da navegação */
+    }
+
     .banner-image {
-        width: 100%; /* Garante que a imagem se ajuste ao tamanho da tela */
-        height: auto; /* Mantém a proporção da imagem */
-    }
-}
-/* Exibe a navegação móvel em dispositivos menores */
-@media (max-width: 768px) {
-    .navegacao-movel {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px;
-        background-color: #474747;
+        margin: 0; /* Remove margem ao redor de cada banner */
+        padding: 0; /* Remove qualquer padding */
+        width: 100%; /* Faz os banners ocuparem toda a largura */
+        height: auto; /* Mantém a proporção das imagens */
+        object-fit: cover; /* Ajusta a imagem sem distorção */
+        display: block; /* Garante que as imagens fiquem como blocos */
+        border: none; /* Remove bordas, se houver */
     }
 
-    /* Ajusta o layout da seção de conteúdo principal */
+    /* Ajusta o layout das seções principais */
     .content-container {
         flex-direction: column;
-        text-align: center; /* Centraliza o conteúdo */
+        text-align: center;
         padding: 20px;
         margin-bottom: 40px;
     }
 
     .content-image {
         width: 100%;
-        margin-right: 0; /* Remove margem à direita */
+        margin-right: 0;
         margin-bottom: 20px;
     }
 
-    /* Ajusta os itens do curso */
+    /* Ajuste para os itens de curso */
     .course-content li {
-        margin-bottom: 20px; /* Espaçamento entre itens */
+        margin-bottom: 20px;
     }
 
-    /* Ajusta o layout dos diferenciais */
+    /* Diferenciais */
     .diferenciais-container {
         flex-direction: column;
         gap: 20px;
     }
 
     .diferencial-item {
-        width: 100%; /* Expande o item para 100% da largura */
-        padding: 15px; /* Reduz o padding */
+        width: 100%; /* Expande para 100% */
+        padding: 15px;
     }
 
-    /* Ajusta a galeria de imagens */
+    /* Ajustes para a galeria */
     .grid-galeria {
         flex-wrap: wrap;
         justify-content: center;
@@ -662,25 +954,15 @@ h2 {
     }
 
     .item-galeria {
-        min-width: 100%; /* Largura de 100% para ocupação da tela */
-        max-width: 100%; /* Ajusta largura máxima para 100% */
+        min-width: 100%;
+        max-width: 100%;
     }
 
     .item-galeria img {
-        max-height: 200px; /* Reduz a altura das imagens */
+        max-height: 200px;
     }
 
-    /* Ajusta depoimentos */
-    .depoimentos-wrapper {
-        flex-direction: column;
-    }
-
-    .depoimento {
-        width: 90%; /* Ajusta a largura */
-        margin: 10px auto; /* Centraliza os depoimentos */
-    }
-
-    /* Ajusta o layout de investimento */
+    /* Ajusta as imagens e conteúdo da seção de investimento */
     .investimento-wrapper {
         flex-direction: column;
         padding: 20px;
@@ -691,17 +973,35 @@ h2 {
         margin: 20px 0;
     }
 
-    /* Ajusta seção de vagas limitadas */
+    /* Ajuste de layout para vagas limitadas */
     .vagas-limitadas {
-        padding: 20px;
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
     }
 
-    .vagas-limitadas h3 {
-        font-size: 1.2em;
-        margin-bottom: 10px;
+    .cta-button {
+        width: 100%;
+        font-size: 1.2rem;
     }
 
-    /* Ajusta rodapé e ícones de redes sociais */
+    /* Layout da seção texto e imagem */
+    .texto-imagem-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .texto-left {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .imagem-container {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    /* Ajuste para ícones sociais */
     .icones-sociais {
         flex-wrap: wrap;
         justify-content: center;
@@ -710,33 +1010,99 @@ h2 {
     .icones-sociais a {
         margin: 5px;
     }
+
+    /* Ajustes na seção de rodapé */
+    .vagas-limitadas h3 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
 }
 
 @media (max-width: 768px) {
-    .texto-imagem-container {
-        flex-direction: column; /* Coloca o texto e a imagem em coluna */
-        align-items: center; /* Centraliza os itens */
+    .rodape-container {
+        flex-direction: column; /* Alinha os containers em coluna */
+        text-align: center; /* Centraliza todo o texto */
+        gap: 20px; /* Espaçamento entre os elementos */
+        padding: 20px; /* Ajusta o espaçamento interno */
+        align-items: center; /* Centraliza os elementos na coluna */
     }
 
-    .texto-left {
-        width: 100%; /* O texto ocupa toda a largura */
-        padding: 10px; /* Adiciona um pequeno espaçamento */
+    .rodape-info-cinza {
+        display: flex;
+        flex-direction: column; /* Elementos um abaixo do outro */
+        align-items: center; /* Centraliza os elementos horizontalmente */
+        text-align: center; /* Centraliza o texto */
+        background-color: #333; /* Fundo cinza */
+        color: #fff; /* Texto branco */
+        padding: 20px; /* Espaçamento interno */
+        border-radius: 8px; /* Bordas arredondadas */
+        width: 100%; /* Garante que ocupa toda a largura */
     }
 
-    .imagem-container {
-        width: 100%; /* A imagem ocupa toda a largura */
-        max-width: 100%;
-        margin-top: 10px; /* Adiciona espaço entre o texto e a imagem */
+    .rodape-logo {
+        margin-bottom: 15px; /* Espaçamento inferior */
+        display: block; /* Garante que seja tratado como um bloco */
     }
 
-    .vagas-limitadas {
-        width: 100%; /* A largura da seção de vagas ocupa 100% */
-        max-width: 100%; /* Garante que não ultrapasse 100% */
-        padding: 10px; /* Ajusta o padding */
+    .rodape-info {
+        margin-bottom: 15px; /* Espaçamento inferior para o endereço */
+        text-align: center; /* Centraliza o texto do endereço */
+    }
+    .rodape-redes-sociais {
+        text-align: center;
+        margin-right: 100px;
+    }
+    .redes-sociais-icones {
+        display: flex;
+        justify-content: center; /* Centraliza os ícones */
+        gap: 10px; /* Espaçamento entre os ícones */
+        margin-top: 10px; /* Espaçamento superior */
+        margin-right: 20px;
     }
 
-    .cta-button {
-        width: 100%; /* Faz o botão ocupar toda a largura */
-        font-size: 1.2rem; /* Ajusta o tamanho da fonte */
+    .rodape-contato {
+        text-align: center; /* Centraliza o texto */
+        width: 100%; /* Ocupa toda a largura */
+    }
+
+    .botao-whatsapp {
+        margin: 20px auto; /* Centraliza o botão */
+        display: inline-block; /* Garante que o botão seja tratado como bloco */
+        background-color: #bbed2f;
+        color: #000;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .botao-whatsapp:hover {
+        background-color: #fa9303;
+        color: #fff;
+    }
+
+    .rodape-mapa iframe {
+        margin: 20px 0; /* Espaçamento superior e inferior */
+        display: block;
+        width: 100%; /* Ajusta a largura para ocupar todo o espaço */
+        max-width: 100%; /* Remove qualquer limite máximo */
+        height: 200px; /* Define altura adequada */
+        border-radius: 8px;
     }
 }
+
+
+
+
+/* Ajustes de layout em telas grandes */
+@media (min-width: 769px) {
+    .navegacao-movel {
+        display: none; /* Esconde o menu móvel em telas grandes */
+    }
+
+    .navegacao-desktop {
+        display: flex; /* Exibe a navegação desktop em telas maiores */
+    }
+}
+
