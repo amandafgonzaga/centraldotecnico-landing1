@@ -61,19 +61,6 @@ function changeDepoimento(direction) {
     }
 }
 
-// Inicia o carrossel
-showDepoimento(currentDepoimentoIndex);
-
-const prevButton = document.querySelector('.prev');
-const nextButton = document.querySelector('.next');
-
-if (prevButton) {
-    prevButton.addEventListener('click', () => changeDepoimento(-1));
-}
-if (nextButton) {
-    nextButton.addEventListener('click', () => changeDepoimento(1));
-}
-
 // Autoplay do carrossel
 let autoplayInterval;
 
@@ -98,9 +85,18 @@ function handleAutoplay() {
 }
 
 window.addEventListener('resize', handleAutoplay);
-handleAutoplay();
+
+// Garantir que o autoplay comece ao carregar a página
+document.addEventListener('DOMContentLoaded', handleAutoplay);
 
 // Evento do menu móvel
 if (menuIcon) {
     menuIcon.addEventListener('click', toggleMobileMenu);
 }
+
+// Fechar o menu se o usuário clicar fora do menu
+document.addEventListener('click', function(event) {
+    if (menuMobile && !menuMobile.contains(event.target) && !menuIcon.contains(event.target)) {
+        menuMobile.classList.remove('show');
+    }
+});
