@@ -10,11 +10,11 @@
 <body>
 
     
-        <!-- Navegação Desktop -->
+<!-- Navegação Desktop -->
     <nav class="navegacao-desktop">
-        <a href="index.html"><img src="images/logo ct branco sem margem.png" alt="Logo Central do Técnico" class="logo"></a>
+        <a href="indice.html"><img src="images/logo ct branco sem margem.png" alt="Logo Central do Técnico" class="logo"></a>
         <ul>
-            <li><a href="index.html">Início</a></li>
+            <li><a href="indice.html">Início</a></li>
             <li><a href="#diferenciais">Sobre</a></li>
             <li><a href="#rodape">Contato</a></li>
             <li><a href="https://wa.me/55119933344084" class="botao-contato" target="_blank">Fale conosco</a></li>
@@ -23,10 +23,10 @@
 
     <!-- Navegação Móvel -->
     <nav class="navegacao-movel">
-        <a href="index.html"><img src="images/logo ct branco sem margem.png" alt="Logo Central do Técnico" class="logo"></a>
+        <a href="landing1.html"><img src="images/logo ct branco sem margem.png" alt="Logo Central do Técnico" class="logo"></a>
         <button class="menu-icon">☰</button>
         <ul class="menu-movel">
-            <li><a href="landing1.html">Início</a></li>
+            <li><a href="indice.html">Início</a></li>
             <li><a href="#diferenciais">Sobre</a></li>
             <li><a href="#rodape">Contato</a></li>
             <li><a href="https://wa.me/55119933344084" class="botao-contato" target="_blank">Fale conosco</a></li>
@@ -35,7 +35,7 @@
 
     
     <div class="banner-container">
-        <img src="images/BANNER.png" alt="Banner de Transformação na Área de Manutenção" 
+        <img src="images/banner.png" alt="Banner de Transformação na Área de Manutenção" 
         class="banner-image">
         <img src="images/BANNER (1800 x 200 px).png" alt="Banner de escola 5 estrelas" 
         class="banner-image">
@@ -187,28 +187,47 @@
                         <p>"O curso é muito bom, muito didático, bem elaborado e prático. Não tenho do que reclamar, só agradecer."</p>
                         <footer>— Alex</footer>
                     </blockquote>
-                    
-                    
-                </div>
-                <button class="prev" onclick="changeDepoimento(-1)">&#10094;</button>
-                <button class="next" onclick="changeDepoimento(1)">&#10095;</button>
-            </div>
+                    <blockquote class="depoimento">
+                        <div class="depoimento-icon">
+                            <img src="images/icons8-usuário-homem-com-círculo-32.png" alt="Ícone de usuário" />
+                        </div>
+                        <p>“Escola muito boa, cumpre o que promete, me inscrevi para o curso básico de manutenção de celulares sem saber nada."</p>
+                        <footer>— Renato</footer>
+                    </blockquote>
+                    <blockquote class="depoimento">
+                        <div class="depoimento-icon">
+                            <img src="images/icons8-usuário-homem-com-círculo-32.png" alt="Ícone de usuário" />
+                        </div>
+                        <p>“Amei...Extraordinário além das expectativas, curso além de prático é muito didático."</p>
+                        <footer>— Alipio</footer>
+                    </blockquote>
+                    <blockquote class="depoimento">
+                        <div class="depoimento-icon">
+                            <img src="images/icons8-usuário-homem-com-círculo-32.png" alt="Ícone de usuário" />
+                        </div>
+                        <p>"Curso muito prático, deu para entender tudo e o suporte que oferece esclarece qualquer dúvida."</p>
+                        <footer>— Maiki</footer>
+                    </blockquote>
         </section>
         
     <div class="investimento-wrapper">
         <div class="investimento-container">
-            <h2>INVISTA NO SEU FUTURO!</h2>
+            <h2 class="titulo-investimento"><h2>INVISTA NO SEU FUTURO!</h2>
             
             <!-- Seção com texto à esquerda e imagem à direita -->
             <div class="texto-imagem-container">
                 <div class="texto-left">
                     <div class="texto-container">
-                        <h1>Android e iOS</h1>
+                        <h4>Android e iOS</h4>
                         <p>Aprenda a trabalhar com Android e iOS no mesmo curso, aumentando suas oportunidades de trabalho!</p>
                     </div>
                     <div class="texto-container">
-                        <h1>Professores atuantes</h1>
+                        <h4>Professores atuantes</h4>
                         <p>Nossos professores são técnicos experientes e atuantes no mercado, proporcionando a você o aprendizado mais realista e prático do dia a dia na bancada.</p>
+                    </div>
+                    <div class="texto-container">
+                        <h4>Método de ensino personalizado</h4>
+                        <p>Desenvolvemos um método que atende às necessidades individuais de cada aluno, garantindo aprendizado eficaz e individualizado.</p>
                     </div>
                 </div>
                 
@@ -232,7 +251,7 @@
     </div>
         
     <footer class="rodape">
-        <div class="rodape-container">
+        <div class="rodape-container" id="rodape">
             <!-- Container 1: Mapa -->
             <div class="rodape-mapa">
                 <iframe 
@@ -251,8 +270,8 @@
                 <div class="rodape-info">
                     <img src="images/logo ct branco sem margem.png" alt="Logo Central do Técnico" class="rodape-logo">
                     <p class="rodape-endereco">
-                        R. Tuiuti, 2358 - Sala 2<br>
-                        Tatuapé, São Paulo<br>
+                        R. Tuiuti, 2358 <br> Sala 2<br>
+                        Tatuapé, SP<br>
                     </p>
                 </div>
                 <div class="rodape-redes-sociais">
@@ -277,7 +296,7 @@
     
             <!-- Container 3: Contato -->
             <div class="rodape-contato">
-                <h3>Tem alguma dúvida?<br>Estamos aqui para ajudar!</h3>
+                <h4>Tem alguma dúvida?<br>Estamos aqui para ajudar!</h4>
                 <p>Agende uma visita e venha conhecer nossa escola de pertinho. Vai ser um prazer te receber e tirar todas as suas dúvidas.</p>
                 <a href="https://wa.me/55119933344084" class="botao-whatsapp" target="_blank">TIRE SUAS DÚVIDAS</a>
             </div>
