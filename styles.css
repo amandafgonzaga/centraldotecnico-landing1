@@ -4,7 +4,9 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box; /* Para garantir que padding e border não afetem a largura total dos elementos */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; /* Para garantir que padding e border não afetem a largura total dos elementos */
 }
 
 html, body {
@@ -12,16 +14,21 @@ html, body {
     padding: 0;
     height: 100%; /* Garante que a altura da tela seja ocupada 100% */
     background-color: #000000; /* Cor de fundo preta */
+
 }
+
 
 /* ========================================================================
    Configuração da página principal
 ========================================================================= */
-
-.main-container {
-    margin: 0 50px; /* Adiciona margem de 30px nas laterais */
-    padding-top: 60px; /* Garantir que o conteúdo não fique escondido atrás da navegação */
-    max-width: 100%; /* Garante que o contêiner ocupe 100% da largura da tela */
+.main-container, 
+.container, 
+.content-container, 
+.content-image, 
+.text-content {
+    width: 100%; /* Garante que o contêiner ocupe 100% da largura da tela */
+    margin: 0 !important; /* Remove margens */
+    padding: 10px !important; /* Remove padding */
 }
 
 
@@ -50,17 +57,20 @@ html, body {
 /* ========================================================================
    Navegação
 ========================================================================= */
+/* Estilização da navegação principal */
 .navegacao-desktop {
     margin: 0;
     height: 60px; /* Defina uma altura fixa para a barra de navegação */
     padding: 2px 10px; /* Diminuir o espaçamento interno lateral */
-    background-color: #474747; /* Cor de fundo */
+    background-color: rgba(71, 71, 71, 1); /* Cor sólida inicialmente */
     position: fixed; /* Fixa a barra no topo */
     width: 100%; /* Largura total */
     z-index: 10; /* Garante que a barra fique acima de outros elementos */
     display: flex; /* Flexbox para alinhar itens */
     align-items: center; /* Centraliza verticalmente todos os itens na barra */
     justify-content: space-between; /* Espaço entre o logo e a lista */
+    top: 0; /* A barra começa visível no topo */
+    transition: background-color 0.3s ease-in-out; /* Transição suave ao esconder ou mostrar */
 }
 
 .navegacao-desktop .logo {
@@ -113,6 +123,14 @@ html, body {
     color: #FFD700; /* Cor do texto ao passar o mouse */
 }
 
+.navegacao-desktop {
+    transition: background-color 0.3s ease; /* Transição suave */
+}
+
+.navegacao-desktop.hidden {
+    opacity: 0;
+    visibility: hidden; /* Esconde a navbar */
+}
 
 body {
     font-family: Montserrat, sans-serif;
@@ -159,14 +177,15 @@ ul {
     align-items: center; /* Alinha os itens verticalmente ao centro */
     justify-content: space-between; /* Espaço entre a imagem e o texto */
     margin: 60px 0; /* Ajusta a margem superior e inferior */
-    padding: 20px; /* Ajusta o espaçamento interno */
+    padding: 0px !important; /* Ajusta o espaçamento interno */
     width: 100%; /* Faz o container ocupar toda a largura */
 }
 
 .content-image {
+    height: 100%; /* Faz o conteúdo ocupar 100% da altura disponível */
     width: 40%; /* A imagem ocupa 40% da largura disponível */
     height: auto; /* Mantém a proporção da imagem */
-    margin-right: 20px; /* Adiciona um espaço entre a imagem e o texto */
+    margin-right: 20px !important; /* Adiciona um espaço entre a imagem e o texto */
 }
 
 .text-content {
@@ -253,6 +272,10 @@ ul {
     width: 100%; /* Largura total do botão */
     text-align: left; /* Alinha o texto à esquerda */
     border-radius: 5px; /* Bordas arredondadas */
+}
+
+.titulo-content {
+    margin-top: 80px;
 }
 
 .dropdown-content {
@@ -454,16 +477,19 @@ ul {
     flex-direction: column; /* Organiza os itens em uma coluna */
     align-items: center; /* Centraliza os itens horizontalmente */
     justify-content: center;
-    gap: 20px; /* Espaçamento entre as seções */
+    gap: 0px !important; /* Espaçamento entre as seções */
     width: 100%; /* Garante que ocupe 100% da largura */
-    padding: 0 0px; /* Adiciona espaçamento interno lateral */
+    padding: 0px; /* Adiciona espaçamento interno lateral */
+    margin-top: -20px;
+    
 }
 .titulo-investimento, h2{
     font-size: 2rem; /* Tamanho do título */
     font-weight: bold; /* Deixa o título em negrito */
     color: #ffffff; /* Cor do título */
     text-align: center; /* Alinha o título no centro */
-    margin-bottom: 20px; /* Margem inferior para espaçamento */
+    margin-bottom: 30px; /* Margem inferior para espaçamento */
+    
 }
 
 .investimento-container {
@@ -477,17 +503,20 @@ ul {
 .texto-imagem-container {
     display: flex;
     justify-content: space-between;
+    align-items: stretch; /* Centraliza o conteúdo */
+    gap: 10px; /* Espaçamento entre o texto e a imagem */
     width: 100%; /* Garante que ocupe toda a largura */
-    gap: 20px; /* Espaçamento entre o texto e a imagem */
-    align-items: stretch; /* Garante que os containers tenham a mesma altura */
+    padding: 0;
 }
 
 .texto-left {
-    width: 40%; /* O texto ocupa 50% da largura */
+    width: 50%; /* O texto ocupa 50% da largura */
     display: flex;
     flex-direction: column; /* Organiza os blocos de texto em coluna */
-    gap: 20px; /* Espaço entre os containers de texto */
-    padding: 0; /* Remove o padding */
+    justify-content: center;
+    gap: 30px; /* Espaço entre os containers de texto */
+    padding: 0px; /* Remove o padding */
+
 }
 
 .texto-container {
@@ -495,7 +524,9 @@ ul {
     border: 2px solid #ffffff; /* Borda branca ao redor do texto */
     border-radius: 8px;
     color: #ffffff;
+    align-items: center;
     text-align: center;
+
 }
 
 .texto-container h4 {
@@ -510,11 +541,11 @@ ul {
 
 /* Seção de imagem */
 .imagem-container {
-    width: 60%; /* Limita a largura da imagem */
+    width: 50%; /* Limita a largura da imagem */
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 0; /* Remove o padding */
+    align-items: column;
+    padding: 0px; /* Remove o padding */
 }
 
 .imagem-container img {
@@ -677,9 +708,16 @@ ul {
     color: #ffffff;
 }
 
+.rodape-contato p {
+    font-size: 14px;
+    text-align: left;
+    color: #ffffff;
+}
+
 .rodape-contato h4 {
     color: #fa9303;
     margin-bottom: 10px;
+    font-size: 16px;
 }
 
 .botao-whatsapp {
@@ -734,16 +772,12 @@ ul {
     margin-top: 80px;
     margin-bottom: 80px;
 }
+/* ========================================================================
+   Configuração da navegação responsiva
+========================================================================= */
 
-/* Oculta a navegação móvel em telas grandes */
-@media (min-width: 770px) {
-    .navegacao-movel {
-        display: none; /* Esconde o menu móvel em telas maiores */
-    }
-}
-
-/* Oculta a navegação desktop em dispositivos móveis */
-@media (max-width: 768px) {
+/* Para telas menores que 768px (Mobile) */
+@media screen and (max-width: 768px) {
     .navegacao-desktop {
         display: none; /* Esconde o menu desktop */
     }
@@ -833,150 +867,148 @@ ul {
     .menu-movel li a:hover {
         color: #000000; /* Cor de destaque ao passar o mouse */
     }
-}
 
 
-/* Responsividade para a imagem do banner */
-@media (max-width: 768px) {
-.banner-container {
-    display: flex; /* Usa Flexbox para empilhar os banners */
-    flex-direction: column; /* Organiza os banners verticalmente */   
-    margin: 0; /* Remove qualquer margem no container */
-    padding: 0; /* Remove qualquer padding no container */
-    padding-top: 78px; /* Adiciona espaço igual à altura da navegação */
-}
+    /* Ajustes no conteúdo e layout para telas pequenas */
+    .banner-container {
+        display: flex; /* Usa Flexbox para empilhar os banners */
+        flex-direction: column; /* Organiza os banners verticalmente */
+        margin: 0; /* Remove qualquer margem no container */
+        padding: 0; /* Remove qualquer padding no container */
+        padding-top: 78px; /* Adiciona espaço igual à altura da navegação */
+    }
 
-.banner-image {
-    margin: 0; /* Remove margem ao redor de cada banner */
-    padding: 0; /* Remove qualquer padding */
-    width: 100%; /* Faz os banners ocuparem toda a largura */
-    height: auto; /* Mantém a proporção das imagens */
-    object-fit: cover; /* Ajusta a imagem sem distorção */
-    display: block; /* Garante que as imagens fiquem como blocos */
-    border: none; /* Remove bordas, se houver */
-}
+    .banner-image {
+        margin: 0; /* Remove margem ao redor de cada banner */
+        padding: 0; /* Remove qualquer padding */
+        width: 100%; /* Faz os banners ocuparem toda a largura */
+        height: auto; /* Mantém a proporção das imagens */
+        object-fit: cover; /* Ajusta a imagem sem distorção */
+        display: block; /* Garante que as imagens fiquem como blocos */
+        border: none; /* Remove bordas, se houver */
+    }
 
-.content-container {
-    flex-direction: column; /* Alinha os itens na coluna */
-    align-items: center; /* Centraliza os itens horizontalmente */
-    justify-content: center; /* Garante que os itens fiquem centrados */
-    padding: 0px; /* Ajusta o padding para telas pequenas */
-    width: 100%; /* Garantir que ocupe 100% da largura da tela */
-    height: 100%
-}
+    .content-container {
+        flex-direction: column; /* Alinha os itens na coluna */
+        align-items: center; /* Centraliza os itens horizontalmente */
+        justify-content: center; /* Garante que os itens fiquem centrados */
+        padding: 0px; /* Ajusta o padding para telas pequenas */
+        width: 100%; /* Garantir que ocupe 100% da largura da tela */
+        height: 100%;
+    }
 
-.content-image {
-    margin-top: -40px;
-    margin-bottom: 20px;
-    width: 100%; /* A imagem ocupa 100% da largura */
-    margin-right: 0; /* Remove a margem direita da imagem */
-    padding: 0;
-}
+    .content-image {
+        margin-bottom: 10px;
+        width: 100%; /* A imagem ocupa 100% da largura */
+        margin-right: 0; /* Remove a margem direita da imagem */
+        padding: 0;
+        border: none;
+    }
 
-.text-content {
-    width: 100%; /* O texto ocupa 100% da largura disponível */
-    padding: 0px; /* Diminui o padding */
-}
+    .text-content {
+        width: 100%; /* O texto ocupa 100% da largura disponível */
+        padding: 0px; /* Diminui o padding */
+    }
 
-.text-content h2 {
-    font-size: 20px; /* Ajusta o tamanho do título para telas menores */
-    margin-bottom: 10px; /* Ajusta o espaçamento */
-    padding: 0;
-    text-align: center;
-}
+    .text-content h2 {
+        font-size: 22px !important; /* Ajusta o tamanho do título para telas menores */
+        margin-bottom: 10px; /* Ajusta o espaçamento */
+        padding: 0;
+        text-align: center;
+    }
 
-.text-content p {
-    font-size: 1em; /* Ajusta o tamanho do texto */
-}
+    .text-content p {
+        font-size: 1em; /* Ajusta o tamanho do texto */
+    }
 
-.content-button {
-    width: 100%; /* O botão ocupa 100% da largura */
-    font-size: 1rem; /* Aumenta o tamanho da fonte */
-    padding: 10px 30px; /* Ajusta o padding do botão */
-}
+    .content-button {
+        width: 100%; /* O botão ocupa 100% da largura */
+        font-size: 1rem; /* Aumenta o tamanho da fonte */
+        padding: 10px 30px; /* Ajusta o padding do botão */
+    }
 
-/* Dropdown */ 
-@media (max-width: 768px) {
-.dropdown {
-    margin: 5px 0; /* Ajusta o espaçamento entre os itens */
-}
-.dropbtn {
-    padding: 15px; /* Menor espaçamento interno */
-    font-size: 16px; /* Reduz o tamanho da fonte */
-}
-.titulo-content {
-    font-size: 20px;
-}
-.dropdown-content {
-    padding: 8px; /* Menor espaçamento interno */
-}
-.cta-dropdown .cta-button {
-    font-size: 1rem;
-    padding: 10px 30px;
-    width: 100%; /* O botão ocupará a largura total disponível */
-}
+    .dropdown {
+        margin: 5px 0; /* Ajusta o espaçamento entre os itens */
+    }
 
-.cta-button:hover {
-    background-color: #fa9303; /* Cor de hover mais escura */
-}
-}
-/* Diferenciais */
-@media (max-width: 768px) {
-.titulo-diferenciais {
-    font-size: 20px; /* Reduz o tamanho do título */
-    margin-top: 50px; /* Ajusta a margem superior */
-    margin-bottom: -30px;
-}
+    .dropbtn {
+        padding: 15px; /* Menor espaçamento interno */
+        font-size: 16px; /* Reduz o tamanho da fonte */
+    }
 
-.diferenciais-container {
-    gap: 20px; /* Diminui o espaçamento entre os itens */
-    width: 100%;
-}
+    .titulo-content {
+        margin-top: 20px;
+        font-size: 22px !important;
+    }
 
-.diferencial-item {
-    flex: 1 1 100%; /* Cada item ocupa 100% da largura disponível */
-    padding: 10px; /* Ajusta o padding */
-    width: 100%;
-}
+    .dropdown-content {
+        padding: 8px; /* Menor espaçamento interno */
+    }
 
-.diferencial-item h3 {
-    font-size: 16px; /* Ajusta o tamanho do título */
-}
+    .cta-dropdown .cta-button {
+        font-size: 1rem;
+        padding: 10px 30px;
+        width: 100%; /* O botão ocupará a largura total disponível */
+    }
 
-.diferencial-item p {
-    font-size: 14px; /* Ajusta o tamanho do texto */
-}
-}
+    .cta-button:hover {
+        background-color: #fa9303; /* Cor de hover mais escura */
+    }
 
-/* Ajustes para a galeria */
-.grid-galeria {
-    margin-top: -50px;
-    margin-bottom: -30px;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
+    .titulo-diferenciais {
+        font-size: 22px !important; /* Reduz o tamanho do título */
+        margin-top: 50px; /* Ajusta a margem superior */
+        margin-bottom: -10px;
+    }
 
-.item-galeria {
-    min-width: 100%;
-    max-width: 100%;
-}
+    .diferenciais-container {
+        gap: 20px; /* Diminui o espaçamento entre os itens */
+        width: 100%;
+    }
 
-.item-galeria img {
-    max-height: 200px;
-}
+    .diferencial-item {
+        flex: 1 1 100%; /* Cada item ocupa 100% da largura disponível */
+        padding: 10px; /* Ajusta o padding */
+        width: 100%;
+    }
 
-.cta-diferenciais .cta-button {
-    font-size: 1rem;
-    padding: 10px 30px;
-    width: 100%; /* O botão ocupará a largura total disponível */
-}
+    .diferencial-item h3 {
+        font-size: 16px; /* Ajusta o tamanho do título */
+    }
+
+    .diferencial-item p {
+        font-size: 14px; /* Ajusta o tamanho do texto */
+    }
+
+    /* Ajustes para a galeria */
+    .grid-galeria {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .item-galeria {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .item-galeria img {
+        max-height: 200px;
+    }
+
+    .cta-diferenciais .cta-button {
+        font-size: 1rem;
+        padding: 10px 30px;
+        width: 100%; /* O botão ocupará a largura total disponível */
+        margin-bottom: 20px;
+    }
+
 
 /*----------------DEPOIMENTOS--------------------------*/
+@media screen and (max-width: 768px) {
 
-@media (max-width: 768px) {
     .titulo-depoimentos {
-        font-size: 20px; /* Diminui o tamanho do título */
+        font-size: 22px !important; /* Diminui o tamanho do título */
         margin-bottom: 15px; /* Diminui o espaçamento abaixo do título */
     }
 
@@ -1003,37 +1035,50 @@ ul {
 }
 
 /*---------------------INVESTIMENTO-------------*/
-
-@media (max-width: 768px) {
-    .titulo-investimento, h2{
-        font-size: 20px !important; /* Tamanho do título */
-        margin-top: -30px;
-    }
+@media screen and (max-width: 768px) {
     .investimento-wrapper {
         flex-direction: column; /* Organiza em coluna para telas menores */
         align-items: center;
-        padding: 0px /* Ajusta o padding para telas pequenas */
+        padding: 0px; /* Ajusta o padding para telas pequenas */
     }
+    
+    .titulo-investimento, h2 {
+        margin-top: 50px;
+        font-size: 22px !important; /* Ajusta o tamanho do título */
+        margin-bottom: 15px; /* Menor margem inferior */
+        text-align: center;
+    }
+
+    .investimento-container {
+        width: 100%; /* Garante que ocupe toda a largura */
+        padding: 0; /* Remove o padding */
+    }
+
     .texto-imagem-container {
         flex-direction: column; /* Coloca o texto e a imagem em coluna */
         justify-content: center;
         gap: 20px; /* Espaço entre o texto e a imagem */
     }
+
     .texto-container h4 {
-        font-size: 16px;
+        font-size: 18px; /* Aumenta o tamanho do texto */
     }
+
     .texto-container p {
-        font-size: 14px;
+        font-size: 16px; /* Aumenta o tamanho do texto */
     }
+
     .texto-left {
         width: 100%; /* O texto ocupa 100% da largura */
-        padding: 10px; /* Ajusta o padding do texto */
-        font-size: 14px;
+        padding: 0px; /* Ajusta o padding do texto */
+        font-size: 16px; /* Aumenta o tamanho do texto */
     }
 
     .imagem-container {
+        margin-top: 5px;
         width: 100%; /* A imagem ocupa 100% da largura */
-        padding: 10px; /* Ajusta o padding da imagem */
+        padding: 0px; /* Ajusta o padding da imagem */
+        margin-bottom: 20px;
     }
 
     .texto-container {
@@ -1044,25 +1089,26 @@ ul {
         width: 100%; /* Faz a seção ocupar toda a largura */
         padding: 10px; /* Ajusta o padding */
     }
+
     .cta-button {
+        margin-top: 10px;
         width: 100%; /* Faz o botão ocupar toda a largura */
         padding: 10px 30px; /* Ajusta o padding para o botão */
-        font-size: 1rem;
+        font-size: 1.2rem; /* Aumenta o tamanho da fonte do botão */
     }
 
     .vagas-limitadas h3 {
-        font-size: 16px; /* Diminui o tamanho do título */
+        font-size: 18px; /* Aumenta o tamanho do título */
     }
 
     .vagas-limitadas p {
-        font-size: 12px; /* Ajusta o tamanho do texto */
+        font-size: 14px; /* Aumenta o tamanho do texto */
     }
-}
+    }
 
 /*-----------RODAPÉ-------*/
 
 
-@media (max-width: 768px) {
 .rodape-container {
     flex-direction: column; /* Organiza os itens em uma coluna */
     align-items: center; /* Centraliza os itens */
@@ -1090,7 +1136,7 @@ ul {
 
 .rodape-redes-sociais {
     font-size: 14px; /* Ajusta o tamanho da fonte */
-    align-items: center;
+    text-align: center;
     color: #ffffff;
     margin-top: 10px;
     margin-right: 50px;
@@ -1116,6 +1162,7 @@ ul {
 }
 
 .rodape-redes-sociais img {
+    align-items: center;
     width: 28px; /* Reduz o tamanho dos ícones */
     height: 28px;
 }
@@ -1133,22 +1180,6 @@ ul {
     text-align: center;
     color: #ffffff;
 }
-}
-
-
-
-/* Ajustes de layout em telas grandes */
-@media (min-width: 769px) {
-    .navegacao-movel {
-        display: none; /* Esconde o menu móvel em telas grandes */
-    }
-
-    .navegacao-desktop {
-        display: flex; /* Exibe a navegação desktop em telas maiores */
-    }
-}
-
-
 
 /* ========================================================================
    Configuração de fontes e tamanhos
@@ -1205,4 +1236,129 @@ li {
     font-size: 1rem; /* Tamanho de fonte consistente para as listas */
     
 }
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    /* Garante que os containers principais ocupem 100% da largura */
+    .main-container, 
+    .content-container, 
+    .content-image, 
+    .text-content, 
+    .container, 
+    .rodape-container, 
+    .secao-galeria, 
+    .secao-depoimentos, 
+    .investimento-container, 
+    .rodape-logo, 
+    .rodape-info-cinza, 
+    .vagas-limitadas,
+    .cta-container {
+        width: 100% !important; /* Garante 100% de largura */
+        padding: 5px !important; /* Remove qualquer padding */
+        margin: 0
+    }
+
+    /* Garante que a imagem do banner ocupe 100% da largura */
+    .banner-image {
+        width: 100% !important;
+        height: auto;
+        object-fit: cover;
+    }
+
+    /* Ajuste de fontes */
+    h1, h3, p {
+        font-size: 16px !important; /* Ajusta o tamanho das fontes para telas pequenas */
+    }
+
+    /* Ajuste para o botão de contato */
+    .botao-contato {
+        width: 100% !important; /* Faz o botão ocupar toda a largura */
+        padding: 15px;
+        font-size: 1rem;
+        background-color: #bbed2f;
+        color: white;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    /* Ajustes para o layout do conteúdo */
+    .content-container {
+        flex-direction: column !important; /* Organiza em coluna */
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .content-image {
+        width: 100% !important;
+        margin-right: 0 !important;
+    }
+
+    .text-content {
+        width: 100% !important;
+        padding: 0;
+    }
+
+    .diferencial-item, .vagas-limitadas {
+        width: 100% !important;
+        padding: 10px;
+    }
+
+    /* Rodapé */
+    .rodape-container {
+        flex-direction: column;
+        width: 100% !important;
+    }
+
+    .rodape-logo {
+        width: 150px !important;
+        margin-top: -20px !important;
+    }
+
+    .rodape-info-cinza {
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    /* Ajuste nas redes sociais */
+    .rodape-redes-sociais img {
+        width: 28px !important; /* Reduz o tamanho dos ícones */
+        height: 28px !important;
+    }
+
+    .redes-sociais-icones{
+        margin-left: 70px;
+    }
+
+    /* Ajuste para imagens */
+    .imagem-container, .item-galeria img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: cover !important;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .navegacao-desktop {
+        display: none !important; /* Esconde o menu desktop em telas pequenas */
+    }
+
+    .navegacao-movel {
+        display: flex !important; /* Exibe a navegação móvel em telas pequenas */
+    }
+}
+
+@media (min-width: 769px) {
+    .navegacao-movel {
+        display: none !important; /* Esconde a navegação móvel em telas grandes */
+    }
+
+    .navegacao-desktop {
+        display: flex !important; /* Exibe a navegação desktop em telas grandes */
+    }
 }
