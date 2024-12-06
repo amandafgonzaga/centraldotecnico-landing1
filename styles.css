@@ -1126,11 +1126,14 @@ ul {
 .rodape-logo {
     width: 150px; /* Reduz a largura do logo para telas menores */
     margin-top: -20px; /* Ajusta o topo para não sobrepor a imagem */
+    margin-left: auto; /* Alinha à esquerda */
+    margin-right: auto; /* Alinha à direita */
+    align-items: center; /* Centraliza os itens no contêiner */
 }
 
 .rodape-endereco {
     font-size: 16px; /* Reduz o tamanho da fonte para melhor legibilidade em telas menores */
-    align-items: center;
+    text-align: center;
     color: #ffffff;
     font-weight: bold;
 }
@@ -1330,7 +1333,7 @@ li {
     }
 
     .redes-sociais-icones{
-        margin-left: 80px;
+        align-items: center;
     }
 
     /* Ajuste para imagens */
