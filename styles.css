@@ -212,6 +212,27 @@ ul {
     margin-bottom: 30px; /* Menor margem abaixo do parágrafo */
 }
 
+/* Estilo para a lista na versão mobile */
+.desktop-list {
+    list-style-type: none; /* Remove os marcadores padrão */
+    padding-left: 0; /* Remove o padding padrão */
+}
+
+.desktop-list li {
+    font-size: 18px; /* Tamanho da fonte */
+    color: #ffffff; /* Cor do texto */
+    display: flex;
+    align-items: center;
+}
+
+/* Adiciona o quadrado antes de cada item usando o pseudo-elemento ::before */
+.desktop-list li::before {
+    content: "▪ "; /* Adiciona o símbolo quadrado antes de cada item */
+    font-size: 18px; /* Tamanho do símbolo */
+    color: #fa9303; /* Cor do quadrado */
+    margin-right: 10px; /* Espaçamento entre o quadrado e o texto */
+}
+
 .content-button {
     display: inline-block;
     background-color: #bbed2f;  /* Cor do WhatsApp */
@@ -235,13 +256,30 @@ ul {
 
 .text-content h2 {
     font-size: 2em; /* Tamanho do título */
+    text-align: left;
+    margin-left: -5px;
+    margin-top: -10px;
     margin-bottom: 10px; /* Espaçamento abaixo do título */
+    color: #ffffff; /* Cor do título em branco */
+}
+
+/* Estilo para a lista na versão desktop */
+.desktop-list {
+    list-style-type: none; /* Remove os marcadores padrão */
+    padding-left: 0; /* Remove o padding padrão */
+}
+
+.desktop-list li {
+    content: "▪  "; /* Adiciona o pontinho antes de cada item */
+    font-size: 16px; /* Tamanho da fonte */
+    color: #ffffff; /* Cor do pontinho */
 }
 
 .text-content p {
     font-size: 16px; /* Tamanho do texto do parágrafo */
     line-height: 1.5; /* Espaçamento entre as linhas */
     text-align: justify; /* Alinha o texto de forma justificada */
+    color: #ffffff; /* Cor do texto em branco */
 }
 
 .titulo-content {
@@ -709,15 +747,17 @@ ul {
 }
 
 .rodape-contato p {
-    font-size: 14px;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 30px;
     text-align: left;
     color: #ffffff;
 }
 
 .rodape-contato h4 {
     color: #fa9303;
-    margin-bottom: 10px;
-    font-size: 16px;
+    margin-top: 20px;
+    font-size: 20px;
 }
 
 .botao-whatsapp {
@@ -921,6 +961,27 @@ ul {
     .text-content p {
         font-size: 1em; /* Ajusta o tamanho do texto */
     }
+
+    /* Estilo para a lista na versão mobile */
+.mobile-list {
+    list-style-type: none; /* Remove os marcadores padrão */
+    padding-left: 0; /* Remove o padding padrão */
+}
+
+.mobile-list li {
+    font-size: 16px; /* Tamanho da fonte */
+
+    display: flex;
+    align-items: center;
+}
+
+/* Adiciona o quadrado antes de cada item usando o pseudo-elemento ::before */
+.mobile-list li::before {
+    content: "▪ "; /* Adiciona o símbolo quadrado antes de cada item */
+    font-size: 18px; /* Tamanho do símbolo */
+    color: #fa9303; /* Cor do quadrado */
+    margin-right: 10px; /* Espaçamento entre o quadrado e o texto */
+}
 
     .content-button {
         width: 100%; /* O botão ocupa 100% da largura */
@@ -1350,45 +1411,80 @@ li {
 
 
 
+/* Para telas menores que 768px (Mobile) */
 @media (max-width: 768px) {
+    /* Esconde o menu desktop em telas pequenas */
     .navegacao-desktop {
-        display: none !important; /* Esconde o menu desktop em telas pequenas */
+        display: none !important;
     }
+
+    /* Exibe o banner móvel e esconde o banner desktop */
     .desktop-banner {
         display: none;
     }
     .mobile-banner {
         display: block;
     }
+
+    /* Exibe a navegação móvel */
     .navegacao-movel {
-        display: flex !important; /* Exibe a navegação móvel em telas pequenas */
+        display: flex !important;
     }
 
+    /* Esconde a lista desktop na versão mobile */
+    .text-desktop .desktop-list {
+        display: none;
+    }
+
+    /* Exibe a lista mobile na versão mobile */
+    .text-mobile .mobile-list {
+        display: block;
+    }
+
+    /* Esconde conteúdo de desktop e exibe o conteúdo mobile */
     .text-desktop {
         display: none;
     }
+    .text-mobile {
+        display: block;
+    }
 }
 
+/* Para telas maiores que 768px (Desktop) */
 @media (min-width: 769px) {
+    /* Esconde a navegação móvel em telas grandes */
     .navegacao-movel {
-        display: none !important; /* Esconde a navegação móvel em telas grandes */
+        display: none !important;
     }
 
+    /* Exibe o menu desktop em telas grandes */
     .navegacao-desktop {
-        display: flex !important; /* Exibe a navegação desktop em telas grandes */
+        display: flex !important;
     }
 
+    /* Esconde o banner móvel e exibe o banner desktop */
     .mobile-banner {
         display: none;
     }
-    
-    /* Exibe os banners de desktop */
     .desktop-banner {
         display: block;
     }
 
+    /* Esconde a lista mobile na versão desktop */
+    .text-mobile .mobile-list {
+        display: none;
+    }
+
+    /* Exibe a lista desktop na versão desktop */
+    .text-desktop .desktop-list {
+        display: block;
+    }
+
+    /* Exibe conteúdo de desktop e esconde o conteúdo mobile */
+    .text-desktop {
+        display: block;
+    }
     .text-mobile {
         display: none;
     }
 }
-
