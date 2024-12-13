@@ -272,7 +272,7 @@ ul {
 .desktop-list li {
     content: "▪  "; /* Adiciona o pontinho antes de cada item */
     font-size: 16px; /* Tamanho da fonte */
-    color: #ffffff; /* Cor do pontinho */
+    color: #fa9303; /* Cor do pontinho */
 }
 
 .text-content p {
