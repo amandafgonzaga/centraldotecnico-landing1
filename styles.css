@@ -818,6 +818,12 @@ ul {
 
 /* Para telas menores que 768px (Mobile) */
 @media screen and (max-width: 768px) {
+    .mobile-list li::before {
+        content: "▪ "; /* Adiciona o símbolo quadrado antes de cada item */
+        font-size: 18px; /* Tamanho do símbolo */
+        color: #fa9303; /* Cor do quadrado no mobile */
+        margin-right: 10px; /* Espaçamento entre o quadrado e o texto */
+    }
     .navegacao-desktop {
         display: none; /* Esconde o menu desktop */
     }
